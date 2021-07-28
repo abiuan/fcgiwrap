@@ -580,6 +580,7 @@ static void handle_fcgi_request(void)
 			execl(filename, filename, (void *)NULL);
 			cgi_error("502 Bad Gateway", "Cannot execute script", filename);
 
+			break;
 		default: /* parent */
 			close(pipe_in[0]);
 			close(pipe_out[1]);
